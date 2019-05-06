@@ -13,7 +13,6 @@
             <li>{{ $project->title }}</li>
         @endforeach
 
-        <h2>My name is {{ $name }} </h2>
     </ul>
 </body>
 </html>
