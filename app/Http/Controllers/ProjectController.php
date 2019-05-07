@@ -37,4 +37,24 @@ class ProjectController extends Controller
 
         return redirect('/projects');
     }
+
+    public function show()
+    {
+        # code...
+    }
+
+    public function edit()
+    {
+        # code...
+    }
+
+    public function update()
+    {
+        # code...
+    }
+
+    public function destroy()
+    {
+        # code...
+    }
 }
