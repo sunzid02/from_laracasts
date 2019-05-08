@@ -2,24 +2,35 @@
 
 @section('content')
        
-        <h1>Create a New Project</h1>
+        <h1 class="title" style="margin-top: 1em">Create a New Project</h1>
+
 
         <form action="/projects" method="post">
             {{ csrf_field() }}
-            <!-- project title -->
-            <div class="control">
-                <input type="text" name="title" id="" placeholder="Project Title">
+
+            <!-- title -->
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input type="text" name="title" class="input" id="" placeholder="Title"  autofocus required>
+                </div>
             </div>
 
-            <!-- project description -->
-            <div>
-                <textarea name="description" id="" cols="30" rows="10" placeholder="give a description"></textarea>
+
+            <!-- description -->
+            <div class="field">
+                <label class="label" for="description">Description</label>
+                <div class="control">
+                        <textarea name="description" id="" class="textarea" required></textarea>
+                </div>
             </div>
 
-            <!-- submission -->
-            <div>
-                <button type="submit">Create Project</button>
-            </div>
+            <!-- submit -->
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-success">Add Project</button>
+                </div>
+            </div>             
         </form>
 
 @endsection
