@@ -25,6 +25,13 @@ class ProjectController extends Controller
 
     public function store()
     {
+        //validation
+        request()->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        //data storing
         Project::create(request(['title', 'description']));
 
         return redirect('/projects');
@@ -50,7 +57,7 @@ class ProjectController extends Controller
         return redirect('projects');
     }
 
-    
+
     public function destroy(Project $project)
     {
         $project->delete();
