@@ -6,13 +6,23 @@
 
     <div class="content">
         {{ $project->description }}
+        <!-- edit link -->
+        <a href="/projects/{{ $project->id }}/edit">
+            <p>
+                Edit
+            </p>
+        </a>
     </div>
 
-    <!-- edit link -->
-    <a href="/projects/{{ $project->id }}/edit">
-        <p>
-            Edit
-        </p>
-    </a>
+
+
+    <!-- show tasks -->
+    @if( $project->tasks->count() )
+        <div>
+            @foreach( $project->tasks as $task)
+            <li> {{ $task->description }} </li>
+            @endforeach
+        </div>
+    @endif
 
 @endsection
