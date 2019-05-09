@@ -26,5 +26,6 @@ Route::get('/about', 'PagesController@about');
 
 Route::resource('projects', 'ProjectController');
 
+Route::patch('/tasks/{task}', 'ProjectTaskController@update');
 
 
