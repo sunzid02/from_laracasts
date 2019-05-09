@@ -12,7 +12,7 @@
             <div class="field">
                 <label class="label">Title</label>
                 <div class="control">
-                    <input type="text" name="title" class="input" id="" placeholder="Title"  autofocus required>
+                    <input type="text" name="title" class="input {{ $errors->has('title') ? 'is-danger' : '' }}" id="" placeholder="Title"  autofocus  value = "{{ old('title') }}">
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
             <div class="field">
                 <label class="label" for="description">Description</label>
                 <div class="control">
-                        <textarea name="description" id="" class="textarea" required></textarea>
+                        <textarea name="description" id="" class="textarea {{ $errors->has('title') ? 'is-danger' : '' }}" placeholder="provide the project's description">{{ old('description') }}</textarea>
                 </div>
             </div>
 
@@ -30,7 +30,19 @@
                 <div class="control">
                     <button type="submit" class="button is-success">Add Project</button>
                 </div>
-            </div>             
+            </div>         
+
+            <!-- error notification  -->
+            @if($errors->any())
+                <div class="notification is-danger">
+                    <ul>
+                        @foreach( $errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
         </form>
 
 @endsection
