@@ -28,4 +28,4 @@ Route::resource('projects', 'ProjectController');
 
 Route::patch('/tasks/{task}', 'ProjectTaskController@update');
 
-
+Route::post('/projects/{project}/tasks', 'ProjectTaskController@store');
