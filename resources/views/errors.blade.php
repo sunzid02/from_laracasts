@@ -1,3 +1,4 @@
+    
     <!-- error notification  -->
     @if($errors->any())
         <div class="notification is-danger">
@@ -7,4 +8,4 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif  
